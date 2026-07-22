@@ -18,7 +18,7 @@ const BRAND_IMAGE_COUNT = 10;
 
 function productImagePath(folder, index) {
   const n = ((index - 1) % BRAND_IMAGE_COUNT) + 1;
-  return `image/${folder}/${folder} (${n}).jpg`;
+  return `./image/${folder}/${folder}_(${n}).jpg`;
 }
 
 /* Trả về 4 đường dẫn ảnh liên tiếp trong cùng thư mục brand,
