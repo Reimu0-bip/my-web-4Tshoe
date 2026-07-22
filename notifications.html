@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Thông báo</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header header--dark">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Trang chủ</a>
+      <a class="nav-link" href="products.html">Sản phẩm</a>
+      <a class="nav-link" href="#">Khuyến mãi</a>
+    </nav>
+    <button class="icon-btn">🔔<span class="badge-count notif-badge">4</span></button>
+  </div>
+</header>
+
+<section class="hero" style="height:130px">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 style="font-size:26px">Thông báo <span style="color:var(--accent)">hệ thống</span></h1>
+      <p style="font-size:13px;color:#9ca3af">Trang chủ / Thông báo</p>
+    </div>
+  </div>
+</section>
+
+<div class="container-wide" style="max-width:1024px;padding-top:28px">
+  <div class="flex justify-between items-center" style="margin-bottom:20px">
+    <h2 style="margin:0;font-size:18px">Tất cả thông báo</h2>
+    <a href="#" id="markAllRead" style="color:var(--accent);font-size:14px;font-weight:600">Đánh dấu đã đọc tất cả</a>
+  </div>
+
+  <div class="notif-filters">
+    <div class="notif-pill active" data-cat="all">Tất cả</div>
+    <div class="notif-pill" data-cat="order">Đơn hàng</div>
+    <div class="notif-pill" data-cat="promo">Ưu đãi</div>
+    <div class="notif-pill" data-cat="system">Hệ thống</div>
+  </div>
+
+  <div id="notifList">
+    <div class="notif-item unread" data-cat="order">
+      <div class="notif-icon ic-green">📦</div>
+      <div class="notif-body"><strong>Đơn hàng #DH10245 đã được giao thành công</strong>
+        <p>Đơn hàng của bạn (Nike Air Max 270) đã giao đến địa chỉ nhận. Cảm ơn bạn đã mua sắm tại 4T Shoe Store!</p>
+        <span class="notif-time">5 phút trước</span></div>
+      <button class="notif-close">✕</button>
+    </div>
+    <div class="notif-item unread" data-cat="promo">
+      <div class="notif-icon ic-red">🏷</div>
+      <div class="notif-body"><strong>Flash Sale 50% — Chỉ trong hôm nay!</strong>
+        <p>Hàng loạt mẫu giày hot đang giảm đến 50%. Nhanh tay săn deal trước khi hết hàng.</p>
+        <span class="notif-time">2 giờ trước</span></div>
+      <button class="notif-close">✕</button>
+    </div>
+    <div class="notif-item unread" data-cat="system">
+      <div class="notif-icon ic-blue">⚙️</div>
+      <div class="notif-body"><strong>Bảo trì hệ thống vào 23:00 - 01:00 (29/06)</strong>
+        <p>Website sẽ tạm ngừng hoạt động để nâng cấp hệ thống thanh toán. Mong bạn thông cảm vì sự bất tiện này.</p>
+        <span class="notif-time">6 giờ trước</span></div>
+      <button class="notif-close">✕</button>
+    </div>
+    <div class="notif-item unread" data-cat="system">
+      <div class="notif-icon ic-orange">⚠️</div>
+      <div class="notif-body"><strong>Phát hiện đăng nhập từ thiết bị mới</strong>
+        <p>Tài khoản của bạn vừa đăng nhập từ một thiết bị mới tại TP. Hồ Chí Minh. Nếu không phải bạn, vui lòng đổi mật khẩu ngay.</p>
+        <span class="notif-time">1 ngày trước</span></div>
+      <button class="notif-close">✕</button>
+    </div>
+    <div class="notif-item" data-cat="order">
+      <div class="notif-icon ic-green">🚚</div>
+      <div class="notif-body"><strong>Đơn hàng #DH10198 đang được vận chuyển</strong>
+        <p>Đơn hàng của bạn đang trên đường đến, dự kiến giao trong 2-3 ngày tới.</p>
+        <span class="notif-time">2 ngày trước</span></div>
+      <button class="notif-close">✕</button>
+    </div>
+    <div class="notif-item" data-cat="promo">
+      <div class="notif-icon ic-red">🎁</div>
+      <div class="notif-body"><strong>Bạn vừa nhận được mã giảm giá 100.000đ</strong>
+        <p>Cảm ơn bạn đã là khách hàng thân thiết. Áp dụng mã FREESHIP100 cho đơn tiếp theo.</p>
+        <span class="notif-time">4 ngày trước</span></div>
+      <button class="notif-close">✕</button>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:24px 0 40px">
+    <button class="btn btn-outline">Xem thêm thông báo</button>
+  </div>
+</div>
+
+<footer class="footer"><div class="container-wide"><div class="footer-bottom"><p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p></div></div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

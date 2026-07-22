@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Trang chủ</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <div class="header-search"><span>🔍</span><input type="text" placeholder="Tìm kiếm sản phẩm"></div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Trang chủ</a>
+      <a class="nav-link" href="products.html">Sản phẩm</a>
+      <button class="icon-btn" onclick="location.href='cart.html'">🛒<span class="badge-count cart-badge">0</span></button>
+      <a class="login-link" href="login.html">👤 Đăng nhập</a>
+    </nav>
+    <button class="mobile-menu-btn">☰</button>
+  </div>
+  <div class="mobile-nav">
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <a href="cart.html">Giỏ hàng (<span class="cart-badge">0</span>)</a>
+    <a href="login.html">Đăng nhập</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Mùa hè Sale lớn</h1>
+      <p>Giảm 50% cho mọi sản phẩm</p>
+      <button class="btn btn-white" onclick="document.querySelector('.section--soft').nextElementSibling.scrollIntoView({behavior:'smooth'})">Mua ngay</button>
+    </div>
+  </div>
+  <button class="hero-arrow prev">‹</button>
+  <button class="hero-arrow next">›</button>
+  <div class="hero-dots">
+    <span class="active"></span><span></span><span></span>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container-wide" style="max-width:1024px">
+    <h2 class="section-title">Các loại hãng giày</h2>
+    <div class="category-grid">
+      <a class="category-card" href="products.html"><span class="cat-icon"><img src="image/logo/Nike.jpg" alt="Nike" style="width:100%;height:100%;object-fit:cover;border-radius:100%"></span><span>Nike</span></a>
+      <a class="category-card" href="products.html"><span class="cat-icon"><img src="image/logo/Puma.jpg" alt="Puma" style="width:100%;height:100%;object-fit:cover;border-radius:100%"></span><span>Puma</span></a>
+      <a class="category-card" href="products.html"><span class="cat-icon"><img src="image/logo/Adidas.jpg" alt="Adidas" style="width:100%;height:100%;object-fit:cover;border-radius:100%"></span><span>Adidas</span></a>
+      <a class="category-card" href="products.html"><span class="cat-icon"><img src="image/logo/4T.jpg" alt="4T" style="width:100%;height:100%;object-fit:cover;border-radius:100%"></span><span>4T</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-wide" style="max-width:1024px">
+    <div style="text-align:center">
+      <h2 class="section-title">Sản phẩm hot</h2>
+      <p class="section-sub">Được mua nhiều nhất trong tuần</p>
+    </div>
+    <div class="product-grid" id="homeProductGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container-wide" style="max-width:1024px">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-title">4T Store Shoe</div>
+        <p>Điểm đến lý tưởng cho các sản phẩm chất lượng với mức giá không thể cạnh tranh hơn. Hãy an tâm mua sắm và khám phá những ưu đãi tuyệt vời mỗi ngày.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Liên kết</h4>
+        <ul><li><a href="#">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Returns</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hãng</h4>
+        <ul><li><a href="products.html">Adidas</a></li><li><a href="products.html">Puma</a></li><li><a href="products.html">Nike</a></li><li><a href="products.html">4T</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ chúng tôi</h4>
+        <ul class="footer-contact">
+          <li>✉️ 4Tstore@gmail.com</li>
+          <li>📞 0382845732</li>
+          <li>📍 69/68 Đ. Đặng Thuỳ Trâm, An Nhơn, Hồ Chí Minh 70000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p>
+      <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

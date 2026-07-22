@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Tất cả sản phẩm</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <nav class="nav" style="text-transform:uppercase;font-size:13px;font-weight:600;gap:24px">
+      <a class="nav-link" href="index.html">Trang chủ</a>
+      <a class="nav-link active" href="products.html">Sản phẩm</a>
+      <a class="nav-link" href="#">Thương hiệu</a>
+      <a class="nav-link" href="#">Khuyến mãi</a>
+      <a class="nav-link" href="contact.html">Liên hệ</a>
+    </nav>
+    <div class="header-icons">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn" onclick="location.href='login.html'">👤</button>
+      <button class="icon-btn" onclick="location.href='cart.html'">🛍<span class="badge-count cart-badge">0</span></button>
+    </div>
+    <button class="mobile-menu-btn">☰</button>
+  </div>
+  <div class="mobile-nav">
+    <a href="index.html">Trang chủ</a><a href="products.html">Sản phẩm</a><a href="#">Thương hiệu</a><a href="#">Khuyến mãi</a><a href="contact.html">Liên hệ</a>
+  </div>
+</header>
+
+<div class="container-wide">
+  <p class="breadcrumb">Trang Chủ / <b>Sản Phẩm</b></p>
+</div>
+
+<div class="products-layout">
+  <aside>
+    <div class="filter-block">
+      <h4>Thương hiệu</h4>
+      <label class="filter-check"><input type="checkbox" value="Nike"> Nike</label>
+      <label class="filter-check"><input type="checkbox" value="Adidas"> Adidas</label>
+      <label class="filter-check"><input type="checkbox" value="Puma"> Puma</label>
+      <label class="filter-check"><input type="checkbox" value="4T"> Giày 4T</label>
+    </div>
+    <div class="filter-block">
+      <h4>Khoảng giá</h4>
+      <div class="flex justify-between text-muted" style="font-size:13px"><span>0đ</span><span>5.000.000đ</span></div>
+      <div class="range-fill"></div>
+      <p class="text-muted" style="font-size:13px">Đến: 3.000.000đ</p>
+    </div>
+    <div class="filter-block">
+      <h4>Kích cỡ</h4>
+      <div class="size-grid">
+        <div class="size-box">36</div><div class="size-box">37</div><div class="size-box selected">38</div><div class="size-box">39</div>
+        <div class="size-box">40</div><div class="size-box">41</div><div class="size-box">42</div><div class="size-box">43</div>
+        <div class="size-box">44</div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="products-toolbar">
+      <div>
+        <h1 style="margin:0;font-size:24px">Tất Cả Sản Phẩm</h1>
+        <p class="text-muted" style="margin:4px 0 0;font-size:14px">Hiển thị 12 / 48 sản phẩm</p>
+      </div>
+      <div class="flex gap-8">
+        <select class="form-input" style="height:36px;width:130px"><option>Mới nhất</option><option>Giá tăng dần</option><option>Giá giảm dần</option></select>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid" style="grid-template-columns:repeat(3,1fr)"></div>
+    <div class="pagination">
+      <button class="page-btn">‹</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn">›</button>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-title">4T Shoe Store</div>
+        <p>Website bán giày thời trang hàng đầu Việt Nam. Chất lượng — Phong cách — Uy tín.</p>
+      </div>
+      <div class="footer-col"><h4>Danh mục</h4><ul><li><a href="#">Giày Nike</a></li><li><a href="#">Giày Adidas</a></li><li><a href="#">Giày Puma</a></li><li><a href="#">Giày 4T</a></li></ul></div>
+      <div class="footer-col"><h4>Hỗ trợ</h4><ul><li><a href="#">Chính sách đổi trả</a></li><li><a href="#">Hướng dẫn chọn size</a></li><li><a href="contact.html">Liên hệ</a></li></ul></div>
+      <div class="footer-col"><h4>Liên hệ</h4><ul class="footer-contact"><li>✉️ 4Tstore@gmail.com</li><li>📞 0382845732</li><li>📍 TP. Hồ Chí Minh</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

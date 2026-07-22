@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Thanh toán</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header header--dark">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <div class="checkout-steps">
+      <span class="step done"><span class="num">✓</span> Giỏ hàng</span>
+      <span class="sep">›</span>
+      <span class="step active"><span class="num">2</span> Thông tin</span>
+      <span class="sep">›</span>
+      <span class="step"><span class="num">3</span> Thanh toán</span>
+    </div>
+    <span class="text-muted" style="font-size:13px">🔒 Bảo mật SSL</span>
+  </div>
+</header>
+
+<div class="container-wide"><p class="breadcrumb">Trang chủ / Giỏ hàng / <b>Thanh toán</b></p></div>
+
+<div class="checkout-layout">
+  <div>
+    <form id="checkoutForm">
+      <div class="checkout-card">
+        <h3><span class="num-circ">1</span> Thông tin khách hàng</h3>
+        <div class="form-grid-2">
+          <div class="form-group"><label class="form-label">Họ <span class="req">*</span></label><input class="form-input" required placeholder="Nguyễn"></div>
+          <div class="form-group"><label class="form-label">Tên <span class="req">*</span></label><input class="form-input" required placeholder="Văn A"></div>
+          <div class="form-group"><label class="form-label">Email <span class="req">*</span></label><input class="form-input" type="email" required placeholder="example@email.com"></div>
+          <div class="form-group"><label class="form-label">Số điện thoại <span class="req">*</span></label><input class="form-input" required placeholder="09xx xxx xxx"></div>
+        </div>
+      </div>
+
+      <div class="checkout-card">
+        <h3><span class="num-circ">2</span> Địa chỉ giao hàng</h3>
+        <div class="form-group"><label class="form-label">Địa chỉ cụ thể <span class="req">*</span></label><input class="form-input" required placeholder="Số nhà, tên đường"></div>
+        <div class="form-grid-2">
+          <div class="form-group"><label class="form-label">Tỉnh / Thành phố <span class="req">*</span></label><input class="form-input" required placeholder="VD: TP. Hồ Chí Minh"></div>
+          <div class="form-group"><label class="form-label">Quận / Huyện <span class="req">*</span></label><input class="form-input" required placeholder="VD: Quận 1"></div>
+          <div class="form-group"><label class="form-label">Phường / Xã <span class="req">*</span></label><input class="form-input" required placeholder="VD: Phường Bến Nghé"></div>
+          <div class="form-group"><label class="form-label">Mã bưu chính</label><input class="form-input" placeholder="VD: 700000"></div>
+        </div>
+      </div>
+
+      <div class="checkout-card">
+        <h3><span class="num-circ">3</span> Phương thức vận chuyển</h3>
+        <label class="ship-option selected">
+          <div class="left"><input type="radio" name="ship" checked><div><strong>Giao Hàng Tiêu Chuẩn</strong><span>3 - 5 ngày làm việc</span></div></div>
+          <span class="price free">Miễn phí</span>
+        </label>
+        <label class="ship-option">
+          <div class="left"><input type="radio" name="ship"><div><strong>Giao Hàng Nhanh</strong><span>1 - 2 ngày làm việc</span></div></div>
+          <span class="price">30.000đ</span>
+        </label>
+        <label class="ship-option">
+          <div class="left"><input type="radio" name="ship"><div><strong>Giao Hàng Hoả Tốc</strong><span>Trong ngày (nội thành)</span></div></div>
+          <span class="price">50.000đ</span>
+        </label>
+      </div>
+
+      <div class="checkout-card">
+        <h3>Mã giảm giá <span class="text-muted" style="font-weight:400;font-size:12px;margin-left:auto">tuỳ chọn</span></h3>
+        <div class="coupon-row" style="margin-top:0">
+          <input class="form-input" id="couponInput2" placeholder="Nhập mã giảm giá">
+          <button type="button" class="btn btn-primary" onclick="localStorage.setItem('4t_coupon','0.2');renderCheckoutSummary();showToast('Đã áp dụng — giảm 20%% cho đơn hàng')">Áp dụng</button>
+        </div>
+        <p class="form-hint success">✓ Đã áp dụng — giảm 20% cho đơn hàng</p>
+      </div>
+
+      <div class="checkout-card">
+        <h3>Ghi chú đơn hàng <span class="text-muted" style="font-weight:400;font-size:12px;margin-left:auto">tuỳ chọn</span></h3>
+        <textarea class="form-input" rows="3" placeholder="Ghi chú thêm cho người giao hàng..."></textarea>
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <div class="checkout-card">
+      <h3>Đơn hàng của bạn</h3>
+      <div id="checkoutSummary"></div>
+      <button class="btn btn-danger btn-block" style="margin-top:16px" onclick="document.querySelector('#checkoutForm').requestSubmit()">Tiến hành thanh toán →</button>
+      <button class="btn btn-outline btn-block" style="margin-top:10px" onclick="location.href='cart.html'">← Quay lại giỏ hàng</button>
+      <p class="secure-note">🔒 Thông tin được mã hoá SSL</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="container-wide"><div class="footer-bottom"><p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p></div></div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

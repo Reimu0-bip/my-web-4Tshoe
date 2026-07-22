@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Lỗi hệ thống</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background:#0a0a0a">
+
+<header class="header header--dark">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <div class="status-pill"><span class="dot"></span> Đang bảo trì hệ thống</div>
+  </div>
+</header>
+
+<div class="error-page">
+  <div class="error-emoji">👟💥</div>
+  <h1 class="error-code">503</h1>
+  <h2>Ối! Trang web đang tạm ngừng hoạt động</h2>
+  <p>Hệ thống <b style="color:#fff">4T Shoe Store</b> đang gặp sự cố kỹ thuật hoặc đang được nâng cấp. Đội ngũ kỹ thuật của chúng tôi đã được thông báo và đang xử lý ngay. Vui lòng thử lại sau ít phút.</p>
+
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Tiến độ khắc phục</span><span>Đang xử lý...</span></div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+  </div>
+
+  <div class="error-actions">
+    <button class="btn btn-danger" id="retryBtn">🔄 Thử lại</button>
+    <button class="btn btn-white" onclick="location.href='index.html'">🏠 Về trang chủ</button>
+  </div>
+
+  <p class="retry-count">Tự động thử lại sau <span id="retrySeconds">29</span> giây</p>
+  <p class="support">Cần hỗ trợ ngay? Gọi hotline <a href="tel:01234567999">01234.567.999</a> hoặc email <a href="mailto:4Tstore@gmail.com">4Tstore@gmail.com</a></p>
+</div>
+
+<div style="text-align:center;padding:20px;color:#666;font-size:12px;border-top:1px solid #1f1f1f">
+  © 2026 4T Shoe Store. Mã lỗi: ERR_SERVICE_UNAVAILABLE — Mọi quyền được bảo lưu.
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

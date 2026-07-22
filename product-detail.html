@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Chi tiết sản phẩm</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header header--dark">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Trang chủ</a>
+      <a class="nav-link" href="products.html">Sản phẩm</a>
+      <a class="nav-link" href="#">Nam</a>
+      <a class="nav-link" href="#">Nữ</a>
+      <a class="nav-link" href="#">Phụ kiện</a>
+      <a class="nav-link" href="#">Khuyến mãi</a>
+    </nav>
+    <div class="header-icons">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn" onclick="location.href='login.html'">👤</button>
+      <button class="icon-btn" onclick="location.href='cart.html'">🛍<span class="badge-count cart-badge">0</span></button>
+    </div>
+    <button class="mobile-menu-btn">☰</button>
+  </div>
+  <div class="mobile-nav">
+    <a href="index.html">Trang chủ</a><a href="products.html">Sản phẩm</a><a href="#">Nam</a><a href="#">Nữ</a><a href="#">Phụ kiện</a><a href="#">Khuyến mãi</a>
+  </div>
+</header>
+
+<div class="container-wide">
+  <p class="breadcrumb">Trang chủ › Nam › <b>Nike Air Force</b></p>
+</div>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 16px">
+  <div class="hero" style="height:190px;border-radius:var(--radius);overflow:hidden;max-width:600px">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"><div class="hero-content"><h1 style="font-size:26px">Mùa hè Sale lớn</h1><p style="font-size:14px">Giảm 50% cho mọi sản phẩm</p><button class="btn btn-white btn-sm">Mua ngay</button></div></div>
+    <button class="hero-arrow prev" style="width:26px;height:26px">‹</button>
+    <button class="hero-arrow next" style="width:26px;height:26px">›</button>
+  </div>
+</div>
+
+<div class="pd-layout">
+  <div class="pd-thumbs" id="pdThumbs"></div>
+  <div class="pd-main" id="pdMain"></div>
+  <div class="pd-info" id="pdInfo"></div>
+</div>
+
+<footer class="footer">
+  <div class="container-wide"><div class="footer-bottom"><p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p></div></div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id') || 'p7';
+  const p = PRODUCTS.find(x=>x.id===id) || PRODUCTS[6];
+
+  document.querySelector('#pdMain').innerHTML = productImgTag(p.img, p.name, p.color, 100);
+
+  const thumbImgs = detailThumbImages(p);
+  document.querySelector('#pdThumbs').innerHTML = thumbImgs.map((src,i)=>
+    `<div class="pd-thumb ${i===0?'active':''}" data-img="${src}">${productImgTag(src, p.name, p.color, 100)}</div>`
+  ).join('');
+  document.querySelectorAll('.pd-thumb').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.pd-thumb').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.querySelector('#pdMain').innerHTML = productImgTag(t.dataset.img, p.name, p.color, 100);
+    });
+  });
+
+  const discountPct = p.oldPrice ? Math.round((1-p.price/p.oldPrice)*100) : null;
+  document.querySelector('#pdInfo').innerHTML = `
+    <h1>${p.name}</h1>
+    <div class="pd-rating">${starRow(p.rating)} <span>(${p.reviews*1 } đánh giá)</span></div>
+    <div class="pd-price">${formatVND(p.price)}
+      ${p.oldPrice?`<span class="old">${formatVND(p.oldPrice)}</span>`:''}
+      ${discountPct?`<span class="pct">-${discountPct}%</span>`:''}
+    </div>
+    <p style="font-weight:600;margin-bottom:6px">Mô tả sản phẩm</p>
+    <p class="pd-desc">Thiết kế kinh điển, dễ phối đồ, phù hợp mọi phong cách. Chất liệu cao cấp, êm ái và bền bỉ.</p>
+    <p style="font-weight:600;margin-bottom:10px">Màu sắc</p>
+    <div class="swatch-row">
+      <div class="color-swatch selected" style="background:#fff;border-color:#ccc"></div>
+      <div class="color-swatch" style="background:#111"></div>
+    </div>
+    <p style="font-weight:600;margin-bottom:10px">Kích thước</p>
+    <div class="size-row">
+      ${[38,39,40,41,42,43].map(s=>`<button class="size-btn ${s===40?'selected':''}">${s}</button>`).join('')}
+    </div>
+    <p style="font-weight:600;margin-bottom:10px">Số lượng</p>
+    <div class="pd-qty-row">
+      <div class="qty-control" style="border:1px solid var(--border);border-radius:8px;padding:4px 8px">
+        <button type="button" onclick="document.querySelector('#pdQty').stepDown()">−</button>
+        <input id="pdQty" type="text" value="1" readonly>
+        <button type="button" onclick="document.querySelector('#pdQty').stepUp()">+</button>
+      </div>
+      <button class="btn btn-primary" style="flex:1" data-quick-add="${p.id}">🛍 Thêm vào giỏ hàng</button>
+      <button class="cart-icon-btn" style="width:42px;height:42px">🤍</button>
+    </div>
+    <div class="pd-perks">
+      <div class="pd-perk"><div class="ic">🚚</div>Miễn phí giao hàng<br>đơn từ 36k</div>
+      <div class="pd-perk"><div class="ic">🔄</div>Đổi trả dễ dàng<br>trong 12 tiếng</div>
+      <div class="pd-perk"><div class="ic">✅</div>Sản phẩm chính hãng<br>100%</div>
+      <div class="pd-perk"><div class="ic">🔒</div>Thanh toán an toàn<br>bảo mật</div>
+    </div>
+  `;
+  document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.size-btn').forEach(x=>x.classList.remove('selected'));
+    b.classList.add('selected');
+  }));
+  document.querySelectorAll('.color-swatch').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.color-swatch').forEach(x=>x.classList.remove('selected'));
+    b.classList.add('selected');
+  }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Phương thức thanh toán</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header header--dark">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <div class="checkout-steps">
+      <span class="step done"><span class="num">✓</span> Giỏ hàng</span>
+      <span class="sep">›</span>
+      <span class="step done"><span class="num">✓</span> Thông tin</span>
+      <span class="sep">›</span>
+      <span class="step active"><span class="num">3</span> Thanh toán</span>
+    </div>
+    <span class="text-muted" style="font-size:13px">🔒 Bảo mật SSL</span>
+  </div>
+</header>
+
+<div class="container-wide"><p class="breadcrumb">Trang chủ / Giỏ hàng / Thông tin / <b>Phương Thức Thanh Toán</b></p></div>
+
+<div class="checkout-layout">
+  <div>
+    <div class="checkout-card">
+      <h3 style="border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:20px">Chọn phương thức thanh toán</h3>
+      <div class="pay-tabs">
+        <div class="pay-tab active" data-tab="0"><span class="emoji">📱</span>Momo</div>
+        <div class="pay-tab" data-tab="1"><span class="emoji">🔲</span>QR Pay</div>
+        <div class="pay-tab" data-tab="2"><span class="emoji">💳</span>Thẻ online</div>
+        <div class="pay-tab" data-tab="3"><span class="emoji">💵</span>Khi nhận</div>
+      </div>
+
+      <div class="pay-panel" style="display:block">
+        <div class="pay-step">
+          <div class="circ">M</div>
+          <div><strong>Thanh toán qua MoMo</strong><p>Ví điện tử · Nhanh chóng · An toàn</p></div>
+        </div>
+        <div class="pay-step">
+          <div class="circ">1</div>
+          <div><strong>Mở ứng dụng MoMo</strong><p>Trên điện thoại, mở ứng dụng MoMo và chọn <b>Chuyển tiền</b> hoặc quét mã QR.</p></div>
+        </div>
+        <div class="pay-step">
+          <div class="circ">2</div>
+          <div><strong>Nhập số điện thoại / quét mã</strong><p>Nhập số điện thoại nhận tiền:</p>
+            <div class="copy-value">0382845732 <button class="copy-btn">SAO CHÉP</button></div>
+          </div>
+        </div>
+        <div class="pay-step">
+          <div class="circ">3</div>
+          <div><strong>Nhập số tiền cần thanh toán</strong>
+            <div class="copy-value" id="payAmount">5.504.000đ <span class="text-muted" style="font-weight:400;font-size:12px">Tổng đơn hàng</span></div>
+          </div>
+        </div>
+        <div class="pay-step">
+          <div class="circ">4</div>
+          <div><strong>Nhập nội dung chuyển khoản</strong><p>Ghi đúng mã đơn hàng: #DH2025061801</p></div>
+        </div>
+        <p class="pay-note">⚠️ Vui lòng chuyển đúng số tiền và ghi đúng mã đơn hàng để quá trình xác nhận được thực hiện tự động. Đơn hàng sẽ được xử lý trong vòng 5–15 phút sau khi xác nhận.</p>
+      </div>
+
+      <div class="flex justify-between" style="margin-top:24px">
+        <button class="btn btn-outline" onclick="location.href='checkout.html'">← Quay lại</button>
+        <button class="btn btn-danger" id="confirmPay">Tôi đã thanh toán ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="checkout-card">
+      <h3>Tóm tắt đơn hàng</h3>
+      <div id="checkoutSummary"></div>
+      <p class="secure-note">🔒 SSL Secure &nbsp; ✉️ Đổi trả 7 ngày &nbsp; ✓ Hàng chính hãng</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="container-wide"><div class="footer-bottom"><p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p></div></div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

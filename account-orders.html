@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4T Shoe Store — Đơn hàng của tôi</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container-wide header-inner">
+    <div class="logo" style="text-transform:uppercase;font-weight:800"><a href="index.html" style="color:inherit;text-decoration:none">4T Shoe Store</a></div>
+    <nav class="nav" style="font-weight:500">
+      <a class="nav-link" href="index.html">Trang chủ</a>
+      <a class="nav-link" href="#">Khuyến mãi</a>
+    </nav>
+    <nav class="nav">
+      <a class="nav-link" href="products.html">Sản phẩm</a>
+      <a class="nav-link" href="#">Nam</a>
+      <a class="nav-link" href="#">Nữ</a>
+      <a class="nav-link" href="#">Phụ kiện</a>
+    </nav>
+    <div class="header-icons">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">👤</button>
+      <button class="icon-btn" onclick="location.href='cart.html'">🛍<span class="badge-count cart-badge">0</span></button>
+    </div>
+    <button class="mobile-menu-btn">☰</button>
+  </div>
+  <div class="mobile-nav"><a href="index.html">Trang chủ</a><a href="products.html">Sản phẩm</a><a href="#">Khuyến mãi</a></div>
+</header>
+
+<div class="account-layout">
+  <aside class="account-sidebar">
+    <div class="account-menu-item"><a href="#" style="color:inherit">👤 Thông tin tài khoản</a></div>
+    <div class="account-menu-item"><a href="account-password.html" style="color:inherit">🔑 Đổi mật khẩu</a></div>
+    <div class="account-menu-item active">📦 Đơn hàng của tôi</div>
+    <div class="account-menu-item">📍 Địa chỉ của tôi</div>
+    <div class="account-menu-item">❤️ Sản phẩm yêu thích</div>
+    <div class="account-menu-item" onclick="location.href='login.html'">🚪 Đăng xuất</div>
+  </aside>
+
+  <div class="account-main">
+    <h1>Đơn hàng của tôi</h1>
+    <div class="tabs">
+      <div class="tab active">Tất cả</div>
+      <div class="tab">Chờ xác nhận</div>
+      <div class="tab">Đang giao</div>
+      <div class="tab">Hoàn thành</div>
+      <div class="tab">Đã huỷ</div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-head">
+        <div><span class="id">Mã đơn: #DH24051501</span><span class="date">Ngày đặt: 15/05/2024</span></div>
+        <span class="order-status status-shipping">Đang giao</span>
+      </div>
+      <div class="order-row">
+        <div class="order-thumb"><img src="image/Nike/Nike (3).jpg" alt="Nike Air Force" style="width:100%;height:100%;object-fit:contain" onerror="this.onerror=null;this.outerHTML='👟'"></div>
+        <div class="info"><strong>Nike Air Force</strong><span>Trắng / 40</span></div>
+        <div class="price">2.490.000đ x1</div>
+        <strong style="width:110px;text-align:right">3.600.000đ</strong>
+        <button class="btn btn-outline btn-sm view-btn">Xem chi tiết</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-head">
+        <div><span class="id">Mã đơn: #DH24050588</span><span class="date">Ngày đặt: 05/05/2024</span></div>
+        <span class="order-status status-done">Hoàn thành</span>
+      </div>
+      <div class="order-row">
+        <div class="order-thumb"><img src="image/Adidas/Adidas (3).jpg" alt="Adidas Ultraboost 22" style="width:100%;height:100%;object-fit:contain" onerror="this.onerror=null;this.outerHTML='👟'"></div>
+        <div class="info"><strong>Adidas Ultraboost 22</strong><span>Đen / 41</span></div>
+        <div class="price">3.290.000đ x1</div>
+        <strong style="width:110px;text-align:right">3.290.000đ</strong>
+        <button class="btn btn-outline btn-sm view-btn">Xem chi tiết</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-head">
+        <div><span class="id">Mã đơn: #DH24042567</span><span class="date">Ngày đặt: 25/04/2024</span></div>
+        <span class="order-status status-cancelled">Đã huỷ</span>
+      </div>
+      <div class="order-row">
+        <div class="order-thumb"><img src="image/Puma/Puma (4).jpg" alt="PUMA SELECT SPEED" style="width:100%;height:100%;object-fit:contain" onerror="this.onerror=null;this.outerHTML='👟'"></div>
+        <div class="info"><strong>PUMA SELECT SPEED</strong><span>Đen / 39</span></div>
+        <div class="price">1.690.000đ x1</div>
+        <strong style="width:110px;text-align:right">1.690.000đ</strong>
+        <button class="btn btn-outline btn-sm view-btn">Xem chi tiết</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><div class="container-wide"><div class="footer-bottom"><p>© 2026 4T Shoe Store. Tất cả các quyền được bảo lưu.</p></div></div></footer>
+
+<script src="js/app.js"></script>
+<script>
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});
+document.querySelectorAll('.view-btn').forEach(b=>b.addEventListener('click',()=>showToast('Đang mở chi tiết đơn hàng...')));
+</script>
+</body>
+</html>
